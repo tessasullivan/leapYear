@@ -1,7 +1,7 @@
 function leapYear(year){
   // Test if divisible by 4
-  if (year % 4 === 0) {
-    console.log(year + " is divisible by 4");
+  if ((year % 4 === 0 && year % 100 != 0)|| year % 400 === 0){
+  //  console.log(year + " is divisible by 4");
     result=true;
   } else {
     result=false;
@@ -17,9 +17,11 @@ $(document).ready(function() {
     var result = leapYear(year);
     console.log(result);
     if (result) {
-      $("#result").append("This is divisible by 4");
+      $("#result").empty();
+      $("#result").append("This is a leap year");
     } else {
-      $("#result").append("This is NOT divisible by 4");
+      $("#result").empty();
+      $("#result").append("This is NOT a leap year");
     }
 //    $("#result").text(result);
   });
