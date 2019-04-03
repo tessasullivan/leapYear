@@ -15,14 +15,24 @@ $(document).ready(function() {
     event.preventDefault();
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
-    console.log(result);
-    if (result) {
-      $("#result").empty();
-      $("#result").append("This is a leap year");
-    } else {
-      $("#result").empty();
-      $("#result").append("This is NOT a leap year");
-    }
+    // console.log(result);
+    // if (result) {
+    //   $("#result").empty();
+    //   $("#result").text("This is a leap year");
+    // } else {
+    //   $("#result").empty();
+    //   $("#result").append("This is NOT a leap year");
+    // }
 //    $("#result").text(result);
+
+    $(".year").text(year);
+
+    if (!result) {
+      $(".not").text("not");
+    } else {
+      $(".not").text("");
+    }
+
+    $("#result").show();
   });
 });
